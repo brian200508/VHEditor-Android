@@ -26,7 +26,6 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.termux.shared.models.ExecutionCommand
 import eightbitlab.com.blurview.RenderScriptBlur
-import james.crasher.Crasher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -142,8 +141,6 @@ class EditorHostActivity : FragmentActivity(), ServiceConnection,
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        if (!BuildConfig.GOOGLEPLAY_BUILD)
-            Crasher(applicationContext)
         mIsOnResumeAfterOnCreate = true
 
         if (savedInstanceState != null)

@@ -15,7 +15,6 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import james.crasher.Crasher
 import kotlinx.coroutines.channels.Channel
 import okio.internal.commonToUtf8String
 import org.apache.commons.compress.archivers.tar.TarArchiveInputStream
@@ -296,8 +295,6 @@ class CodeServerService() : Service() {
     }
 
     override fun onCreate() {
-        if (!BuildConfig.GOOGLEPLAY_BUILD)
-            Crasher(applicationContext)
         super.onCreate()
         instance = this
     }
